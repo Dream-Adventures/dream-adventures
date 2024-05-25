@@ -1,0 +1,146 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .comingsoon {
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    background: url("/assets/img/bg.jpg") top center no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .comingsoon::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(49, 71, 89, 0.6);
+  }
+  
+  @media (min-width: 1024px) {
+    .comingsoon {
+      background-attachment: fixed;
+    }
+  }
+  
+  a {
+    color: #24b7a4;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #36d8c3;
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  /* Header */
+  #header {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  #header h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+  }
+  
+  #header h2 {
+    color: #eee;
+    margin-bottom: 40px;
+    font-size: 22px;
+  }
+  
+  #header .countdown {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #header .countdown div {
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin: 10px 10px;
+    width: 100px;
+    padding: 15px 0;
+  }
+  
+  #header .countdown div h3 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  #header .countdown div h4 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 575px) {
+    #header .countdown div {
+      width: 70px;
+      padding: 10px 0;
+      margin: 10px 8px;
+    }
+  
+    #header .countdown div h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  
+    #header .countdown div h4 {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  
+  /* Footer */
+  #footer {
+    background: rgba(38, 55, 69, 0.4);
+    padding: 30px 0;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  #footer .copyright {
+    text-align: center;
+  }
+  
+  #footer .credits {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+  }
+  
+  #footer .credits a {
+    color: #36d8c3;
+  }
+    
