@@ -13,6 +13,6 @@ import { ComingsoonComponent } from './screens/comingsoon/comingsoon.component';
 })
 export class AppComponent {
   title = 'angular-dreamadventures';
-  production = !environment.production;
+  production = environment.production;
 
 }
