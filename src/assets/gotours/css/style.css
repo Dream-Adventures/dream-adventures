@@ -571,7 +571,7 @@ footer .copyright p {
     /* navbar */
     
     .navbar ul {
-        background-color: rgba(189, 140, 191, .85);
+        background-color: rgba(189, 140, 191, 0.95);
     }
     .navbar ul li {
         margin: 10px 0;

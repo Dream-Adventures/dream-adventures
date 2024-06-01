@@ -1,5 +1,3 @@
 <app-comingsoon *ngIf="production"></app-comingsoon>
 
-<div *ngIf="!production" class="container">
-  Home page
-</div>
+<router-outlet *ngIf="!production"></router-outlet>

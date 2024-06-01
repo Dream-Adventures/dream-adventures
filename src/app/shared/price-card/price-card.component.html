@@ -1,0 +1,32 @@
+<!-- <div class="card text-bg-dark">
+    <img src="/assets/gotours/imgs/card-nature-house.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">21 Days Package</h5>
+      <p class="card-text"><small>Holidays</small></p>
+      <p class="card-text"><small>Clubbing</small></p>
+      <p class="card-text"><small>Fitness 1 Year</small></p>
+      <p class="card-text"><small>Children's Activities</small></p>
+      <p class="card-text"><small>Banquet halls</small></p>
+      <p class="card-text"><small>Day Outings</small></p>
+      <p class="card-text">$ 3,25,000/-</p>
+      <button class="btn btn-primary card-btn">Book Now</button>
+    </div>
+  </div> -->
+
+  <div class="booking-card">
+    <div class="card-main" [ngStyle]="{'background-image':'url('+ bgImage + ')'}">
+        <div class="card-content">
+            <h2>{{heading}}</h2>
+            <p>Holidays</p>
+            <p>Clubbing</p>
+            <p>Fitness 1 Year</p>
+            <p>Children's Activities</p>
+            <p>Banquet halls</p>
+            <p>Day Outings</p>
+            <p class="price">{{price}}</p>
+            <button (click)="openModal()" >Book Now</button>
+        </div>
+    </div>
+  </div>
+  
+  

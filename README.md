@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Deploy
 `ng deploy --base-href=/dream-adventures/`
-`ng deploy --cname=example.org`
+`ng deploy --cname=thedreamadventures.com`
 
 ## Development server
 

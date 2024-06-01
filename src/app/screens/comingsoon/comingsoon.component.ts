@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import { NgStyle } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-comingsoon',
   standalone: true,
-  imports: [],
+  imports: [NgStyle],
   templateUrl: './comingsoon.component.html',
   styleUrl: './comingsoon.component.css'
 })
-export class ComingsoonComponent {
-  targetDate: Date = new Date('2024-06-03T00:00:00');
+export class ComingsoonComponent implements OnInit {
+  backgroundImageUrl!: string;
+  targetDate: Date = new Date('2024-06-04T00:00:00');
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
 
   ngOnInit(): void {
+    this.backgroundImageUrl = `${environment.baseHref}assets/img/bg.jpg`;
     this.updateCountdown();
     setInterval(() => {
       this.updateCountdown();
