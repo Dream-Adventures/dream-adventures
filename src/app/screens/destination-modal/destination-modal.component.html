@@ -1,0 +1,52 @@
+<div
+  *ngIf="sharedService.isDestinationModalVisible"
+  class="modal-backdrop fade show"
+></div>
+<div *ngIf="sharedService.isDestinationModalVisible" class="modal d-block">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Select a Destination</h5>
+        <button type="button" class="btn-close" (click)="closeModal()">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+              <form>
+                <mat-form-field>
+                  <mat-label>Search</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    [formControl]="myControl"
+                    [matAutocomplete]="auto"
+                  />
+                  <mat-autocomplete
+                    #auto="matAutocomplete"
+                    [displayWith]="displayFn"
+                  >
+                    <mat-option
+                      *ngFor="let option of filteredOptions | async"
+                      [value]="option"
+                      >{{ option.name }}</mat-option
+                    >
+                  </mat-autocomplete>
+                  <mat-icon matSuffix>map</mat-icon>
+                </mat-form-field>
+              </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="closeModal()"
+        >
+          Go
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

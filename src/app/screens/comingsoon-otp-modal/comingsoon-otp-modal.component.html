@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Enter OTP</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>OTP</mat-label>
+    <input matInput [(ngModel)]="otp">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSubmit()">Submit</button>
+</div>

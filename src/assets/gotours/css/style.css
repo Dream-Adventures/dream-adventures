@@ -667,3 +667,7 @@ footer .copyright p {
     }
     
 }
+
+.cdk-overlay-container {
+    z-index: 2500 !important; /* Make sure this is applied */
+}

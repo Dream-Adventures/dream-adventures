@@ -1,3 +1,3 @@
-<app-comingsoon *ngIf="production"></app-comingsoon>
+<app-comingsoon *ngIf="sharedService.isComingSoon"></app-comingsoon>
 
-<router-outlet *ngIf="!production"></router-outlet>
+<router-outlet *ngIf="!sharedService.isComingSoon"></router-outlet>
