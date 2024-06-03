@@ -21,7 +21,8 @@ export class AppComponent implements OnInit {
   title = 'angular-dreamadventures';
 
   ngOnInit() {
-    this.sharedService.isComingSoon = environment.production;
+    // this.sharedService.isComingSoon = environment.production;
+    this.sharedService.isComingSoon = false;
   }
 
 }

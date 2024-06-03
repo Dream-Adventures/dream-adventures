@@ -22,4 +22,8 @@ export class HomeComponent {
     this.router.navigateByUrl("/destination");
     this.sharedService.destination = this.constantService.getPlaceByKey(city);
   }
+
+  waBook() {
+    return this.constantService.whatsappBookNow();
+  }
 }

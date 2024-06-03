@@ -38,6 +38,7 @@ header .container > div {
   
 .must-visit {
     margin-top: 60px;
+    overflow: hidden;
 }
 
 .must-visit h2 {

@@ -7,6 +7,7 @@ import {
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideClientHydration } from '@angular/platform-browser';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -16,6 +17,6 @@ const scrollConfig: InMemoryScrollingOptions = {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimationsAsync(),
-    provideRouter(routes, withInMemoryScrolling(scrollConfig)),
+    provideRouter(routes, withInMemoryScrolling(scrollConfig)), provideClientHydration(),
   ],
 };

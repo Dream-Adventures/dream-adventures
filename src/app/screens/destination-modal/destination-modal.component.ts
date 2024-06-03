@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { ConstantService } from '../../shared/constant.service';
+import { Router } from '@angular/router';
 
 export interface Destins {
   place: string;
@@ -49,6 +50,7 @@ export class DestinationModalComponent implements OnInit {
   ];
   filteredOptions!: Observable<Destins[]>;
   formError = false;
+  router = inject(Router);
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -91,7 +93,7 @@ export class DestinationModalComponent implements OnInit {
       this.formError = false;
       const selct:string = this.myControl.value.content;
       this.sharedService.destination = this.constantService.getPlaceByKey(selct);
-      window.scrollTo(0, 0);
+      this.router.navigateByUrl("/destination");
     } else {
       this.sharedService.destination = null;
       this.formError = true;

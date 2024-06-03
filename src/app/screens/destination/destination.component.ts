@@ -34,4 +34,13 @@ export class DestinationComponent {
   isEmpty(obj: object): boolean {
     return Object.keys(obj).length === 0;
   }
+
+  
+  waBook(place: string) {
+    return this.constantService.whatsappBook(place);
+  }
+  
+  waCall(place: string) {
+    return this.constantService.whatsappCallBack(place);
+  }
 }

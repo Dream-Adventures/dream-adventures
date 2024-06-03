@@ -7,6 +7,32 @@ import { Places } from '../models/places';
 
 
 export class ConstantService {
+  directWaLink = "https://web.whatsapp.com/send?phone=+";
+  whatslink = "https://wa.me/";
+  whatsapp = "918553083172";
+
+  getEncodedUrl(message: string) {
+    return encodeURIComponent(message);
+  }
+
+  whatsappBook(place: string) {
+    const book = "I would like to book my travel to ";
+    // return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(book) + place;
+    return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(book) + place;
+  }
+
+  whatsappCallBack(place: string) {
+    const call = "Please call me back. I have some questions regarding my travel plans to ";
+    // return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(call) + place;
+    return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(call) + place;
+  }
+
+  whatsappBookNow() {
+    const call = "I would like to book my travel";
+    // return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(call);
+    return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(call);
+  }
+
   places:Places[]  = [
     {
       key: "bangalore",
