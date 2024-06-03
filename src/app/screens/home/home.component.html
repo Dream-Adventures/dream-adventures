@@ -11,7 +11,9 @@
           >We are a dedicated team passionate about curating unforgettable
           experiences that turn your vacations into cherished memories.
         </p>
-        <button><a href="{{waBook()}}" class="text-uppercase">book now</a></button>
+        <button>
+          <a href="{{ waBook() }}" class="text-uppercase">book now</a>
+        </button>
       </div>
     </div>
   </div>
@@ -94,17 +96,65 @@
           <h4>Mysore</h4>
         </div>
       </div>
+
       <div class="col-xl-3 col-lg-4 col-md-6">
-        <div class="places"><h4>London</h4></div>
+        <div
+          class="places"
+          [ngStyle]="{
+            'background-image':
+              'url(' +
+              (constantService.getPlaceByKey('dubai')?.image || '') +
+              ')'
+          }"
+          (click)="gotoCity('dubai')"
+        >
+          <h4>Dubai</h4>
+        </div>
       </div>
+
       <div class="col-xl-3 col-lg-4 col-md-6">
-        <div class="places"><h4>London</h4></div>
+        <div
+          class="places"
+          [ngStyle]="{
+            'background-image':
+              'url(' +
+              (constantService.getPlaceByKey('london')?.image || '') +
+              ')'
+          }"
+          (click)="gotoCity('london')"
+        >
+          <h4>London</h4>
+        </div>
       </div>
+
       <div class="col-xl-3 col-lg-4 col-md-6">
-        <div class="places"><h4>London</h4></div>
+        <div
+          class="places"
+          [ngStyle]="{
+            'background-image':
+              'url(' +
+              (constantService.getPlaceByKey('malaysia')?.image || '') +
+              ')'
+          }"
+          (click)="gotoCity('malaysia')"
+        >
+          <h4>Malaysia</h4>
+        </div>
       </div>
+
       <div class="col-xl-3 col-lg-4 col-md-6">
-        <div class="places"><h4>London</h4></div>
+        <div
+          class="places"
+          [ngStyle]="{
+            'background-image':
+              'url(' +
+              (constantService.getPlaceByKey('paris')?.image || '') +
+              ')'
+          }"
+          (click)="gotoCity('paris')"
+        >
+          <h4>Paris</h4>
+        </div>
       </div>
     </div>
   </div>
@@ -150,8 +200,6 @@
     </div>
 </div> -->
 
-
-
 <div class="container my-5">
   <div class="container">
     <h2 class="text-capitalize">
@@ -160,17 +208,51 @@
     <p>DISCOVER INDIA'S TOP VACATION COMPANY!</p>
   </div>
   <div id="carousel-2" class="carousel slide" data-bs-ride="false">
-      <div class="carousel-inner">
-          <div class="carousel-item"><img class="w-100 d-block" src="assets/gotours/imgs/pic4.jpg" alt="Slide Image" /></div>
-          <div class="carousel-item active"><img class="w-100 d-block" src="assets/gotours/imgs/pic4.jpg" alt="Slide Image" /></div>
-          <div class="carousel-item"><img class="w-100 d-block" src="assets/gotours/imgs/pic4.jpg" alt="Slide Image" /></div>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img
+          class="w-100 d-block"
+          src="assets/gotours/imgs/pic4.jpg"
+          alt="Slide Image"
+        />
       </div>
-      <div><a class="carousel-control-prev" href="#carousel-2" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-2" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
-      <ol class="carousel-indicators">
-          <li data-bs-target="#carousel-2" data-bs-slide-to="0"></li>
-          <li class="active" data-bs-target="#carousel-2" data-bs-slide-to="1"></li>
-          <li data-bs-target="#carousel-2" data-bs-slide-to="2"></li>
-      </ol>
+      <div class="carousel-item active">
+        <img
+          class="w-100 d-block"
+          src="assets/gotours/imgs/pic4.jpg"
+          alt="Slide Image"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="w-100 d-block"
+          src="assets/gotours/imgs/pic4.jpg"
+          alt="Slide Image"
+        />
+      </div>
+    </div>
+    <div>
+      <a
+        class="carousel-control-prev"
+        href="#carousel-2"
+        role="button"
+        data-bs-slide="prev"
+        ><span class="carousel-control-prev-icon" aria-hidden="true"></span
+        ><span class="visually-hidden">Previous</span></a
+      ><a
+        class="carousel-control-next"
+        href="#carousel-2"
+        role="button"
+        data-bs-slide="next"
+        ><span class="carousel-control-next-icon" aria-hidden="true"></span
+        ><span class="visually-hidden">Next</span></a
+      >
+    </div>
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carousel-2" data-bs-slide-to="0"></li>
+      <li class="active" data-bs-target="#carousel-2" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carousel-2" data-bs-slide-to="2"></li>
+    </ol>
   </div>
 </div>
 

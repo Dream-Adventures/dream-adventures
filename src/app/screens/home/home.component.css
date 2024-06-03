@@ -81,6 +81,8 @@ header .container > div {
     border-bottom-left-radius: 30px;
     transition: 0.3s;
     color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .places:hover {

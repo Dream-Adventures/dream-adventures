@@ -47,6 +47,10 @@ export class DestinationModalComponent implements OnInit {
     { place: 'Bangalore, Karnataka, India', content: 'bangalore'},
     { place: 'Hyderabad, Andhra, India', content: 'hyderabad'},
     { place: 'Mysore, Karnataka, India', content: 'mysore'},
+    { place: 'Dubai, UAE', content: 'dubai'},
+    { place: 'London, UK', content: 'london'},
+    { place: 'Malaysia', content: 'malaysia'},
+    { place: 'Paris, France', content: 'paris'},
   ];
   filteredOptions!: Observable<Destins[]>;
   formError = false;
