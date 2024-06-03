@@ -29,11 +29,15 @@
                     <mat-option
                       *ngFor="let option of filteredOptions | async"
                       [value]="option"
-                      >{{ option.name }}</mat-option
+                      >{{ option.place }}</mat-option
                     >
                   </mat-autocomplete>
                   <mat-icon matSuffix>map</mat-icon>
                 </mat-form-field>
+                
+            <div *ngIf="formError" class="text-danger">
+              An error occured.
+            </div>
               </form>
         </div>
       </div>
@@ -42,7 +46,7 @@
           type="button"
           class="btn btn-primary"
           data-bs-dismiss="modal"
-          (click)="closeModal()"
+          (click)="onSubmit();"
         >
           Go
         </button>

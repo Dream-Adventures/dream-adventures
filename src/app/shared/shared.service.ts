@@ -6,12 +6,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SharedService {
   isComingSoon = false;
-  
+  destination = "";
   isDestinationModalVisible = false;
-  destinationForm = new FormGroup({
-    destination: new FormControl('', Validators.required),
-    place: new FormControl('', Validators.required),
-  });
+  // destinationForm = new FormGroup({
+  //   destination: new FormControl('', Validators.required),
+  //   place: new FormControl('', Validators.required),
+  // });
 
   isBookFormModalVisible = false;
   bookForm = new FormGroup({

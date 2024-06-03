@@ -5,3 +5,89 @@ header {
 header .container > div {
     top: calc(100vh / 3.5);
 }
+
+.bookWithUs {
+    background: linear-gradient(rgb(113, 0, 0), black);
+  }
+  
+  .bookWithUs > div > div > div {
+    border-left-style: solid;
+    border-left-color: var(--bs-white);
+  }
+  
+  @media (min-width: 768px) {
+    .bookWithUs > div > div > div:nth-child(1) {
+      text-align: start;
+      border-left-style: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bookWithUs > div > div > div {
+      border-left-style: none;
+      border-bottom-style: solid;
+      border-width: thin;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bookWithUs > div > div > div:last-child {
+      border-bottom-style: none;
+    }
+  }
+  
+.must-visit {
+    margin-top: 60px;
+}
+
+.must-visit h2 {
+    text-align: center;
+  }
+.must-visit .row > div:first-child {
+    background-color: beige;
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.places-title {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    left: 50px;
+}
+
+.places {
+    width: 100%;
+    margin: auto;
+    max-width: 320px;
+    height: 300px;
+    background-image: url("/assets/gotours/imgs/agency.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: 0.3s;
+    color: white;
+}
+
+.places:hover {
+    border-radius: 30px;
+}
+
+.places > h4 {
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+

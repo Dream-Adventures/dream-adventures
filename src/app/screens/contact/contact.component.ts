@@ -14,4 +14,5 @@ import { BookModalComponent } from '../book-modal/book-modal.component';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
+
 }
