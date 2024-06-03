@@ -1,18 +1,71 @@
-
 <app-navbar></app-navbar>
 
-<app-parallax-heading heading="Destinations{{sharedService.destination !== '' ? ' | ' + sharedService.destination : ''}}" bgImage="/assets/gotours/imgs/agency.jpg"></app-parallax-heading>
+<app-parallax-heading
+  heading="Destination{{
+    sharedService.destination !== null
+      ? ' | ' + sharedService.destination!.place
+      : 's'
+  }}"
+  bgImage="{{ sharedService.destination ? sharedService.destination!.image : '/assets/gotours/imgs/agency.jpg' }}"
+></app-parallax-heading>
 
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <button class="btn btn-primary" (click)="openModal()">Select Destination</button>
-        </div>
+<div *ngIf="sharedService.destination === null" class="container my-5">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Find Your Dream Destination!</h1>
+    <p class="lead">
+      Explore the world's most beautiful destinations with us. Select a
+      destination to start your journey.
+    </p>
+    <hr class="my-4" />
+    <p>
+      Choose from a wide range of tours and travel packages to make your
+      vacation memorable.
+    </p>
+    <a class="btn btn-primary btn-lg" (click)="openModal()"
+      >Select a Destination</a
+    >
+  </div>
+</div>
+
+<div *ngIf="sharedService.destination !== null" class="container">
+    <div class="d-flex justify-content-end align-items-center bg-light p-3 my-2">
+        <h5 class="mb-0 me-3">Destination: <span class="text-primary">{{ sharedService.destination!.place }}</span></h5>
+        <button class="btn btn-outline-info" (click)="openModal()">
+            Change Destination
+        </button>
     </div>
+  <h3 class="text-center">{{ sharedService.destination!.description }}</h3>
+  <h5 class="mt-5">Discover {{ sharedService.destination!.place }}'s Charms</h5>
+  <p>
+    <span class="fw-bold"></span> {{ sharedService.destination!.description1 }}
+  </p>
+  <p>
+    <span class="fw-bold"></span> {{ sharedService.destination!.description2 }}
+  </p>
+  <p>
+    <span class="fw-bold"></span> {{ sharedService.destination!.description3 }}
+  </p>
+  <h5>Dream Adventures Services</h5>
+  <p>{{ sharedService.destination!.withus }}</p>
+  <h5>Inquire Through WhatsApp: Begin Your Bangalore Adventure</h5>
+  <p>
+    Ready to explore the innovation and culture of Bangalore with Dream
+    Adventures Services? Connect with us on WhatsApp to learn more about our
+    exclusive packages, accommodations, and travel arrangements. Let us guide
+    you towards an unforgettable tech and culture adventure that aligns with
+    your interests. Your journey into the Silicon Valley of India starts with a
+    message – we’re here to make your travel dreams come true!
+  </p>
+  <div class="row mb-5 gy-3">
+    <div class="col-md-6 d-flex justify-content-center">
+      <button class="btn btn-outline-primary">Book Now</button>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <button class="btn btn-outline-primary">Request A Call Back</button>
+    </div>
+  </div>
 </div>
 
 <app-destination-modal></app-destination-modal>
-
-
 
 <app-footer></app-footer>

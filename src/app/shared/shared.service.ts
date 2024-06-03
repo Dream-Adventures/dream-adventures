@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Places } from '../models/places';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
   isComingSoon = false;
-  destination = "";
+  destination:Places|null = null;
   isDestinationModalVisible = false;
-  // destinationForm = new FormGroup({
-  //   destination: new FormControl('', Validators.required),
-  //   place: new FormControl('', Validators.required),
-  // });
 
   isBookFormModalVisible = false;
   bookForm = new FormGroup({

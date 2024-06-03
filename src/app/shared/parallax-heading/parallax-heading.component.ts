@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-parallax-heading',
@@ -11,4 +12,6 @@ import { Component, Input } from '@angular/core';
 export class ParallaxHeadingComponent {
   @Input() heading!: string;
   @Input() bgImage!: string;
+
+  sharedService = inject(SharedService);
 }

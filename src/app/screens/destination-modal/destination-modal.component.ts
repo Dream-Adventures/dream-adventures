@@ -12,11 +12,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { ConstantService } from '../../shared/constant.service';
 
 export interface Destins {
   place: string;
-  image: string;
-  description: string;
+  content: string;
 }
 
 @Component({
@@ -37,15 +37,15 @@ export interface Destins {
 })
 export class DestinationModalComponent implements OnInit {
   sharedService = inject(SharedService);
+  constantService = inject(ConstantService);
   myControl = new FormControl<Destins>({
     place: '',
-    image: '',
-    description: '',
+    content: '',
   });
   options: Destins[] = [
-    { place: 'Karnataka, India', image: '', description: '' },
-    { place: 'Maharastra, India', image: '', description: '' },
-    { place: 'Delhi, India', image: '', description: '' },
+    { place: 'Bangalore, Karnataka, India', content: 'bangalore'},
+    { place: 'Hyderabad, Andhra, India', content: 'hyderabad'},
+    { place: 'Mysore, Karnataka, India', content: 'mysore'},
   ];
   filteredOptions!: Observable<Destins[]>;
   formError = false;
@@ -58,6 +58,10 @@ export class DestinationModalComponent implements OnInit {
         return name ? this._filter(name as string) : this.options.slice();
       })
     );
+  }
+
+  ngOnDestroy() {
+    this.sharedService.destination = null;
   }
 
   displayFn(user: Destins): string {
@@ -85,8 +89,11 @@ export class DestinationModalComponent implements OnInit {
     if (this.myControl.value?.place) {
       this.closeModal();
       this.formError = false;
-      this.sharedService.destination = this.myControl.value?.place;
+      const selct:string = this.myControl.value.content;
+      this.sharedService.destination = this.constantService.getPlaceByKey(selct);
+      window.scrollTo(0, 0);
     } else {
+      this.sharedService.destination = null;
       this.formError = true;
     }
   }
