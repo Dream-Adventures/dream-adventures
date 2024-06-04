@@ -44,19 +44,23 @@ export class DestinationModalComponent implements OnInit {
     content: '',
   });
   options: Destins[] = [
-    { place: 'Bangalore, Karnataka, India', content: 'bangalore'},
-    { place: 'Hyderabad, Andhra, India', content: 'hyderabad'},
-    { place: 'Mysore, Karnataka, India', content: 'mysore'},
-    { place: 'Dubai, UAE', content: 'dubai'},
-    { place: 'London, UK', content: 'london'},
-    { place: 'Malaysia', content: 'malaysia'},
-    { place: 'Paris, France', content: 'paris'},
+    // { place: 'Bangalore, Karnataka, India', content: 'bangalore'},
+    // { place: 'Hyderabad, Andhra, India', content: 'hyderabad'},
+    // { place: 'Mysore, Karnataka, India', content: 'mysore'},
+    // { place: 'Dubai, UAE', content: 'dubai'},
+    // { place: 'London, UK', content: 'london'},
+    // { place: 'Malaysia', content: 'malaysia'},
+    // { place: 'Paris, France', content: 'paris'},
   ];
   filteredOptions!: Observable<Destins[]>;
   formError = false;
   router = inject(Router);
 
   ngOnInit() {
+    this.options = this.constantService.places.map(place => ({
+      place: place.country,
+      content: place.key
+    }));
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map((value) => {

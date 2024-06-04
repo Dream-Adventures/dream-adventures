@@ -17,26 +17,40 @@ export class ConstantService {
 
   whatsappBook(place: string) {
     const book = "I would like to book my travel to ";
-    // return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(book) + place;
-    return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(book) + place;
+    if (this.isMobile()) {
+      return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(book) + place;
+    } else {
+      return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(book) + place;
+    }
   }
 
   whatsappCallBack(place: string) {
     const call = "Please call me back. I have some questions regarding my travel plans to ";
-    // return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(call) + place;
-    return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(call) + place;
+    if (this.isMobile()) {
+      return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(call) + place;
+    } else {
+      return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(call) + place;
+    }
   }
 
   whatsappBookNow() {
     const call = "I would like to book my travel";
-    // return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(call);
-    return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(call);
+    if (this.isMobile()) {
+      return this.whatslink + this.whatsapp + "?text=" + this.getEncodedUrl(call);
+    } else {
+      return this.directWaLink + this.whatsapp + "&text=" + this.getEncodedUrl(call);
+    }
+  }
+
+  isMobile() : boolean {
+    return /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 
   places:Places[]  = [
     {
       key: "bangalore",
       place : "Bangalore",
+      country : "Bangalore, Karnataka, India",
       image : "/assets/gotours/imgs/city/bangalore.jpg",
       description : "Nestled in the heart of Karnataka, Bangalore, also known as Bengaluru, is a city of contrasts, blending technological prowess with cultural richness. With Dream Adventures Services as your travel companion, your journey to Bangalore promises a seamless blend of innovation, history, and artistic exploration.",
       description1 : "Cubbon Park: Green Oasis Begin your exploration at Cubbon Park, a lush green oasis in the city center. The park offers serene walking trails, landscaped gardens, and a respite from urban life.",
@@ -47,6 +61,7 @@ export class ConstantService {
     {
       key: "hyderabad",
       place : "Hyderabad",
+      country : "Hyderabad, Andhra, India",
       image : "/assets/gotours/imgs/city/hyderabad.jpg",
       description : "Nestled in the heart of Telangana, Hyderabad is a city of mesmerizing contrasts, blending its rich Nizami heritage with cutting-edge technology. With Dream Adventures Services as your travel companion, your journey to Hyderabad promises a seamless blend of history, innovation, and culinary delights.",
       description1 : "Charminar: Icon of Hyderabad Begin your exploration at the iconic Charminar, a centuries-old monument that stands as a symbol of the city. Climb to the top for panoramic views of the bustling streets.",
@@ -57,6 +72,7 @@ export class ConstantService {
     {
       key: "mysore",
       place : "Mysore",
+      country : "Mysore, Karnataka, India",
       image : "/assets/gotours/imgs/city/mysore.jpg",
       description : "Nestled in the heart of Karnataka, Mysore is a city that exudes royal grandeur, rich heritage, and a timeless charm. With Dream Adventures Services as your travel companion, your journey to Mysore promises a seamless blend of regal palaces, cultural immersion, and traditional craftsmanship.",
       description1 : "Mysore Palace: Royal Splendor Begin your exploration at the Mysore Palace, a magnificent royal residence that dazzles with its Indo-Saracenic architecture, intricate artwork, and opulent interiors.",
@@ -67,6 +83,7 @@ export class ConstantService {
     {
       key : "dubai",
       place : "Dubai",
+      country : "Dubai, UAE",
       image : "/assets/gotours/imgs/city/dubai.jpg",
       description : "Nestled on the shores of the Arabian Gulf, Dubai is a dazzling city that seamlessly blends futuristic architecture, luxurious living, and the timeless beauty of the desert. With Dream Adventures Services as your travel companion, your journey to Dubai promises an extravagant mix of skyscrapers, golden sands, and cultural richness.",
       description1 : "Burj Khalifa: Touch the Sky Begin your exploration at the Burj Khalifa, the world’s tallest building. Take an elevator ride to the observation deck for panoramic views of the city.",
@@ -77,6 +94,7 @@ export class ConstantService {
     {
       key : "london",
       place : "London",
+      country : "London, UK",
       image : "/assets/gotours/imgs/city/london.jpg",
       description : "Nestled on the banks of the River Thames, London is a city that seamlessly blends centuries-old tradition with modern vibrancy. With Dream Adventures Services as your travel companion, your journey to London promises an exciting mix of historic landmarks, cultural diversity, and contemporary excitement.",
       description1 : "The British Museum: Timeless Treasures Begin your exploration at The British Museum, home to a vast collection of art and artifacts from around the world, including the Rosetta Stone and the Elgin Marbles.",
@@ -87,6 +105,7 @@ export class ConstantService {
     {
       key : "malaysia",
       place : "Malaysia",
+      country : "Malaysia",
       image : "/assets/gotours/imgs/city/malaysia.jpg",
       description : "Located in Southeast Asia, Malaysia is a nation that boasts stunning natural landscapes, a rich tapestry of cultures, and vibrant modern cities. With Dream Adventures Services as your travel guide, your journey to Malaysia promises an enriching blend of tropical adventures, cultural exploration, and culinary delights.",
       description1 : "Kuala Lumpur: Urban Elegance Begin your exploration in Kuala Lumpur, Malaysia’s capital, and visit the iconic Petronas Twin Towers, explore Batu Caves, and stroll through the bustling streets of Chinatown.",
@@ -97,6 +116,7 @@ export class ConstantService {
     {
       key : "paris",
       place : "Paris",
+      country : "Paris, France",
       image : "/assets/gotours/imgs/city/paris.jpg",
       description : "Nestled in the heart of France, Paris is a city that epitomizes romance, art, and timeless elegance. With Dream Adventures Services as your travel guide, your journey to Paris promises a captivating blend of iconic landmarks, artistic treasures, and gourmet delights.",
       description1 : "Eiffel Tower: Iconic Landmark Begin your exploration at the Eiffel Tower, where you can ascend to the top for breathtaking views of the city and the Seine River.",
