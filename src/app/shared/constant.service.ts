@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Places } from '../models/places';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Places } from '../models/places';
 export class ConstantService {
   directWaLink = "https://web.whatsapp.com/send?phone=+";
   whatslink = "https://wa.me/";
-  whatsapp = "918553083172";
+  whatsapp = "919972736830";
 
   getEncodedUrl(message: string) {
     return encodeURIComponent(message);
@@ -42,8 +43,16 @@ export class ConstantService {
     }
   }
 
-  isMobile() : boolean {
-    return /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  // isMobile() : boolean {
+  //   return /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  // }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  isMobile(): boolean {
+    if (isPlatformBrowser(this.platformId)) {
+      return /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    return false;
   }
 
   places:Places[]  = [
@@ -135,6 +144,4 @@ export class ConstantService {
   
   
 
-
-  constructor() { }
 }
