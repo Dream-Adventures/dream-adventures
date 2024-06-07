@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { ConstantService } from '../../shared/constant.service';
+
 import { Router } from '@angular/router';
 
 export interface Destins {
@@ -65,7 +66,8 @@ export class DestinationModalComponent implements OnInit {
       startWith(''),
       map((value) => {
         const name = typeof value === 'string' ? value : value?.place;
-        return name ? this._filter(name as string) : this.options.slice();
+        const nameOrList = name ? this._filter(name as string) : this.options.slice();
+        return nameOrList;
       })
     );
   }

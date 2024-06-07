@@ -1,96 +1,178 @@
 header {
-    height: 100vh;
+  height: 100vh;
 }
 
-header .container > div {
-    top: calc(100vh / 3.5);
+header .container>div {
+  top: calc(100vh / 3.5);
 }
 
 .bookWithUs {
-    background: linear-gradient(rgb(113, 0, 0), black);
+  background: linear-gradient(rgb(113, 0, 0), black);
+}
+
+.bookWithUs>div>div>div {
+  border-left-style: solid;
+  border-left-color: var(--bs-white);
+}
+
+.bookWithUs .numbers {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+
+@media (min-width: 768px) {
+  .bookWithUs>div>div>div:nth-child(1) {
+    text-align: start;
+    border-left-style: none;
   }
-  
-  .bookWithUs > div > div > div {
-    border-left-style: solid;
-    border-left-color: var(--bs-white);
+}
+
+@media (max-width: 768px) {
+  .bookWithUs>div>div>div {
+    border-left-style: none;
+    border-bottom-style: solid;
+    border-width: thin;
   }
-  
-  @media (min-width: 768px) {
-    .bookWithUs > div > div > div:nth-child(1) {
-      text-align: start;
-      border-left-style: none;
-    }
+}
+
+@media (max-width: 768px) {
+  .bookWithUs>div>div>div:last-child {
+    border-bottom-style: none;
   }
-  
-  @media (max-width: 768px) {
-    .bookWithUs > div > div > div {
-      border-left-style: none;
-      border-bottom-style: solid;
-      border-width: thin;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .bookWithUs > div > div > div:last-child {
-      border-bottom-style: none;
-    }
-  }
-  
+}
+
 .must-visit {
-    margin-top: 60px;
-    overflow: hidden;
+  margin-top: 60px;
+  overflow: hidden;
 }
 
 .must-visit h2 {
-    text-align: center;
-  }
-.must-visit .row > div:first-child {
-    background-color: beige;
-    position: relative;
-    height: 300px;
-    display: flex;
-    align-items: center;
+  text-align: center;
+}
+
+.must-visit .row>div:first-child {
+  background-color: beige;
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
 }
 
 .places-title {
-    position: absolute;
-    width: 350px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
-    left: 50px;
+  position: absolute;
+  width: 350px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  left: 50px;
 }
 
 .places {
-    width: 100%;
-    margin: auto;
-    max-width: 320px;
-    height: 300px;
-    background-image: url("/assets/gotours/imgs/agency.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    transition: 0.3s;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 20px;
+  width: 100%;
+  margin: auto;
+  max-width: 320px;
+  height: 300px;
+  background-image: url("/assets/gotours/imgs/agency.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transition: 0.3s;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .places:hover {
-    border-radius: 30px;
+  border-radius: 30px;
 }
 
-.places > h4 {
-    margin-top: auto;
-    margin-bottom: 40px;
+.places>h4 {
+  margin-top: auto;
+  margin-bottom: 40px;
 }
 
+
+.video-background {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: url('/assets/gotours/imgs/header_animated.mp4') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.background-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.background-content .container {
+  text-align: start;
+}
+
+.background-content h1 {
+  font-size: 90px;
+  font-weight: 700;
+}
+
+.background-content p {
+  color: black;
+
+}
+
+.background-content a {
+  padding: 10px 40px;
+  display: block;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 900;
+
+}
+
+.background-content button {
+  background-color: #0000006e;
+  display: block;
+  border: 2px solid #FFF;
+  border-radius: 50px;
+  padding: 0;
+  margin: 30px auto;
+}
+
+.background-content button:hover {
+  background-color: #bd8cbf;
+  border: 2px solid #bd8cbf;
+}
+
+.carousel-item {
+  transition: transform 2s ease-in-out; /* Change 2s to your desired duration */
+}

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light text-capitalize d-flex justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-dark text-capitalize d-flex justify-content-center">
     <div class="container">
         <a class="navbar-brand" (click)="collapseNavbar()" routerLink="/"><img class="logo" src="/assets/gotours/imgs/dreamas.png" alt="#" height="80px"/></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -17,22 +17,16 @@
                     <a class="nav-link"  (click)="collapseNavbar()" routerLink="/service">Service</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link"  (click)="collapseNavbar()" routerLink="/gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link"  (click)="collapseNavbar()" routerLink="/destination">Destinations</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"  (click)="collapseNavbar()" routerLink="/contact">contact us</a>
                 </li>
-                <li class="nav-item .search-container">
-                    <a class="nav-link search" href="#"><i class="fas fa-search"></i></a>
-                    <form>
-                        <input type="search">
-                    </form>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="far fa-user"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
                 </li>
             </ul>
         </div>

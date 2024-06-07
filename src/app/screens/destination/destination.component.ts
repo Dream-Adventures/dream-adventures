@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, inject } from '@angular/core';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { ParallaxHeadingComponent } from '../../shared/parallax-heading/parallax-heading.component';
@@ -14,14 +14,15 @@ import { ConstantService } from '../../shared/constant.service';
   templateUrl: './destination.component.html',
   styleUrl: './destination.component.css'
 })
-export class DestinationComponent {
+export class DestinationComponent implements OnInit {
   constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
   constantService = inject(ConstantService);
   sharedService = inject(SharedService);
 
-  // ngOnInit() {
-  //   this.sharedService.destination = this.constantService.getPlaceByKey("bangalore");
-  // }
+  ngOnInit() {
+    // this.sharedService.destination = this.constantService.getPlaceByKey("bangalore");
+    this.openModal();
+  }
   
   openModal() {
     this.sharedService.isDestinationModalVisible = true;

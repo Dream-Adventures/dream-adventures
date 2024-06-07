@@ -57,7 +57,7 @@ nav.navbar {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: transparent;
+    background-color: #000000b8;
     width: 100%;
     z-index: 1000;
     font-family: 'Open Sans', sans-serif;
@@ -571,7 +571,7 @@ footer .copyright p {
     /* navbar */
     
     .navbar ul {
-        background-color: rgba(189, 140, 191, 0.95);
+        background-color: rgb(0 0 0 / 58%);
     }
     .navbar ul li {
         margin: 10px 0;

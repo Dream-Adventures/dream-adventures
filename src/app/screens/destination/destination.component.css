@@ -1,0 +1,73 @@
+/* Styling for destination header */
+.destination-header {
+    border-bottom: 2px solid #ccc;
+}
+
+/* Styling for destination description */
+.destination-description {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Styling for destination info */
+.destination-info {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for dream adventures services */
+.dream-adventures-services {
+    margin-top: 30px;
+}
+
+/* Styling for WhatsApp inquire section */
+.whatsapp-inquire {
+    margin-top: 30px;
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for WhatsApp inquire section title */
+.whatsapp-inquire h5 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styling for booking and call back buttons */
+.btn-book-now,
+.btn-request-callback {
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Styling for booking button */
+.btn-book-now {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn-book-now:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Styling for call back button */
+.btn-request-callback {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.btn-request-callback:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -14,6 +14,13 @@ import { SharedService } from '../../shared/shared.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  @ViewChild('backgroundVideo') backgroundVideo!: ElementRef<HTMLVideoElement>;
+
+  ngAfterViewInit() {
+    if (this.backgroundVideo) {
+      this.backgroundVideo.nativeElement.playbackRate = 0.7; // Set the playback rate to 0.5 (half speed)
+    }
+  }
   router = inject(Router)
   sharedService = inject(SharedService);
   constantService = inject(ConstantService);
