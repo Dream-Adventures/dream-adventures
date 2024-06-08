@@ -2,14 +2,15 @@ import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { CommonModule } from '@angular/common';
-import { ConstantService } from '../../shared/constant.service';
 import { Router } from '@angular/router';
 import { SharedService } from '../../shared/shared.service';
+import { VideoBackgroundComponent } from './video-background/video-background.component';
+import { CountryDataService } from '../../shared/country-data.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule],
+  imports: [NavbarComponent, FooterComponent, CommonModule, VideoBackgroundComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -23,14 +24,11 @@ export class HomeComponent {
   }
   router = inject(Router)
   sharedService = inject(SharedService);
-  constantService = inject(ConstantService);
+  countryDataService = inject(CountryDataService);
 
   gotoCity(city: string) {
     this.router.navigateByUrl("/destination");
-    this.sharedService.destination = this.constantService.getPlaceByKey(city);
+    this.sharedService.destination = this.countryDataService.getPlaceByKey(city);
   }
 
-  waBook() {
-    return this.constantService.whatsappBookNow();
-  }
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +10,19 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  router = inject(Router);
+  sharedService = inject(SharedService);
+
   collapseNavbar() {
     const navbarCollapse = document.getElementById('show-menu');
     if (navbarCollapse!.classList.contains('show')) {
       navbarCollapse!.classList.remove('show');
     }
+  }
+
+  clickDestination() {
+    this.collapseNavbar();
+    this.router.navigateByUrl("/destination");
+    this.sharedService.isDestinationModalVisible = true;
   }
 }

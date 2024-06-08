@@ -19,28 +19,7 @@
   </div>
 </header> -->
 
-<div class="video-background">
-  <video #backgroundVideo autoplay muted loop id="background-video">
-      <source src="/assets/gotours/imgs/header_animated.mp4" type="video/mp4">
-      <img src="/assets/gotours/imgs/header.jpg" alt="Background Image">
-  </video>
-  <div class="background-content">
-    <div class="container">
-      <div>
-        <h1><span>Dream</span><br />Adventure Services</h1>
-        <p>
-          <span class="text-capitalize"
-            >Welcome to our world of exceptional holidays and timeless travels! </span
-          >We are a dedicated team passionate about curating unforgettable
-          experiences that turn your vacations into cherished memories.
-        </p>
-        <button>
-          <a href="{{ waBook() }}" class="text-uppercase">book now</a>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+<app-video-background></app-video-background>
 
 <section class="bookWithUs">
   <div class="container">
@@ -83,7 +62,7 @@
           [ngStyle]="{
             'background-image':
               'url(' +
-              (constantService.getPlaceByKey('hyderabad')?.image || '') +
+              (countryDataService.getPlaceByKey('hyderabad')?.image || '') +
               ')'
           }"
           (click)="gotoCity('hyderabad')"
@@ -97,7 +76,7 @@
           [ngStyle]="{
             'background-image':
               'url(' +
-              (constantService.getPlaceByKey('bangalore')?.image || '') +
+              (countryDataService.getPlaceByKey('bangalore')?.image || '') +
               ')'
           }"
           (click)="gotoCity('bangalore')"
@@ -111,7 +90,7 @@
           [ngStyle]="{
             'background-image':
               'url(' +
-              (constantService.getPlaceByKey('mysore')?.image || '') +
+              (countryDataService.getPlaceByKey('mysore')?.image || '') +
               ')'
           }"
           (click)="gotoCity('mysore')"
@@ -126,7 +105,7 @@
           [ngStyle]="{
             'background-image':
               'url(' +
-              (constantService.getPlaceByKey('dubai')?.image || '') +
+              (countryDataService.getPlaceByKey('dubai')?.image || '') +
               ')'
           }"
           (click)="gotoCity('dubai')"
@@ -141,7 +120,7 @@
           [ngStyle]="{
             'background-image':
               'url(' +
-              (constantService.getPlaceByKey('london')?.image || '') +
+              (countryDataService.getPlaceByKey('london')?.image || '') +
               ')'
           }"
           (click)="gotoCity('london')"
@@ -156,7 +135,7 @@
           [ngStyle]="{
             'background-image':
               'url(' +
-              (constantService.getPlaceByKey('malaysia')?.image || '') +
+              (countryDataService.getPlaceByKey('malaysia')?.image || '') +
               ')'
           }"
           (click)="gotoCity('malaysia')"
@@ -171,7 +150,7 @@
           [ngStyle]="{
             'background-image':
               'url(' +
-              (constantService.getPlaceByKey('paris')?.image || '') +
+              (countryDataService.getPlaceByKey('paris')?.image || '') +
               ')'
           }"
           (click)="gotoCity('paris')"

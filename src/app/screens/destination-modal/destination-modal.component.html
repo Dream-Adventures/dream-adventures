@@ -13,7 +13,7 @@
       </div>
       <div class="modal-body">
         <div class="container">
-              <form>
+              <form class="text-center">
                 <mat-form-field appearance="outline">
                   <mat-label>Search</mat-label>
                   <input
@@ -42,16 +42,18 @@
               </form>
         </div>
       </div>
-      <div class="modal-footer">
-        <button
+      <div class="modal-footer justify-content-center" style="height: 150px;">
+        <!-- <button
           type="button"
           class="btn btn-primary"
           data-bs-dismiss="modal"
-          (click)="onSubmit();"
+          (click)="allCountries();"
         >
-          Go
-        </button>
+          Show all Countries
+        </button> -->
+        <button mat-flat-button (click)="openDialog()">Show all Places</button>
       </div>
     </div>
   </div>
 </div>
+

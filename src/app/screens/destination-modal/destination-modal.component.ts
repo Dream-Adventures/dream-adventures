@@ -1,6 +1,5 @@
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { SharedService } from '../../shared/shared.service';
 import {
   FormControl,
   FormsModule,
@@ -12,9 +11,14 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { ConstantService } from '../../shared/constant.service';
 
 import { Router } from '@angular/router';
+import { ConstantService } from '../../shared/constant.service';
+import { CountryDataService } from '../../shared/country-data.service';
+import { SharedService } from '../../shared/shared.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DestinationModalPlacesComponent } from '../destination/destination-modal-places/destination-modal-places.component';
+import { MatButtonModule } from '@angular/material/button';
 
 export interface Destins {
   place: string;
@@ -33,11 +37,13 @@ export interface Destins {
     MatAutocompleteModule,
     AsyncPipe,
     MatIconModule,
+    MatButtonModule,
   ],
   templateUrl: './destination-modal.component.html',
   styleUrl: './destination-modal.component.css',
 })
 export class DestinationModalComponent implements OnInit {
+  constructor(public dialog: MatDialog) {};
   sharedService = inject(SharedService);
   constantService = inject(ConstantService);
   myControl = new FormControl<Destins>({
@@ -56,9 +62,10 @@ export class DestinationModalComponent implements OnInit {
   filteredOptions!: Observable<Destins[]>;
   formError = false;
   router = inject(Router);
+  countryDataService = inject(CountryDataService);
 
   ngOnInit() {
-    this.options = this.constantService.places.map(place => ({
+    this.options = this.countryDataService.places.map(place => ({
       place: place.country,
       content: place.key
     }));
@@ -102,11 +109,18 @@ export class DestinationModalComponent implements OnInit {
       this.closeModal();
       this.formError = false;
       const selct:string = this.myControl.value.content;
-      this.sharedService.destination = this.constantService.getPlaceByKey(selct);
+      this.sharedService.destination = this.countryDataService.getPlaceByKey(selct);
       this.router.navigateByUrl("/destination");
     } else {
       this.sharedService.destination = null;
       this.formError = true;
     }
+  }
+
+  
+  openDialog(): void {
+    this.dialog.open(DestinationModalPlacesComponent, {
+      data: { message: 'Hello, world!' }
+    });
   }
 }

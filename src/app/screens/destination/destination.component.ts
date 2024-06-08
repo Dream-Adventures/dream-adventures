@@ -6,23 +6,25 @@ import { SharedService } from '../../shared/shared.service';
 import { DestinationModalComponent } from '../destination-modal/destination-modal.component';
 import { CommonModule } from '@angular/common';
 import { ConstantService } from '../../shared/constant.service';
+import { DestinationModalPlacesComponent } from './destination-modal-places/destination-modal-places.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-destination',
   standalone: true,
-  imports: [NavbarComponent,FooterComponent, ParallaxHeadingComponent, DestinationModalComponent, CommonModule],
+  imports: [NavbarComponent,FooterComponent, ParallaxHeadingComponent, DestinationModalComponent, CommonModule, MatButtonModule],
   templateUrl: './destination.component.html',
   styleUrl: './destination.component.css'
 })
-export class DestinationComponent implements OnInit {
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
+export class DestinationComponent {
+  // constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
   constantService = inject(ConstantService);
   sharedService = inject(SharedService);
-
-  ngOnInit() {
-    // this.sharedService.destination = this.constantService.getPlaceByKey("bangalore");
-    this.openModal();
-  }
+  // ngOnInit() {
+  //   this.sharedService.destination = this.constantService.getPlaceByKey("bangalore");
+  //   this.openModal();
+  // }
   
   openModal() {
     this.sharedService.isDestinationModalVisible = true;
@@ -44,4 +46,5 @@ export class DestinationComponent implements OnInit {
   waCall(place: string) {
     return this.constantService.whatsappCallBack(place);
   }
+
 }
