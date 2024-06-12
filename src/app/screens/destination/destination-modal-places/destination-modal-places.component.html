@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-4" *ngFor="let column of placesInColumns">
-                <p *ngFor="let place of column" (click)="gotoCity(place.place)">{{ place.place }}</p>
+                <p *ngFor="let place of column" style="cursor: pointer;" (click)="gotoCity(place.place)">{{ place.place }}</p>
               </div>
         </div>
     </div>

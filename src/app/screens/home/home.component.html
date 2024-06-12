@@ -318,13 +318,14 @@
     <div class="container">
       <h2 class="text-center">Get in touch</h2>
       <div class="contact-form">
-        <form>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="text" placeholder="Phone" />
-          <textarea placeholder="Message"></textarea>
+        <form *ngIf="!enquirySubmitted" [formGroup]="enquiryForm" (ngSubmit)="submitEnq()">
+          <input type="text" placeholder="Name"  formControlName="name"/>
+          <input type="email" placeholder="Email"  formControlName="email"/>
+          <input type="text" placeholder="Phone"  formControlName="phone"/>
+          <textarea placeholder="Message" formControlName="message"></textarea>
           <input type="submit" value="SEND" />
         </form>
+        <div *ngIf="enquirySubmitted">Thank you for your enquiry, We will give you a response shortly.</div>
       </div>
     </div>
   </div>

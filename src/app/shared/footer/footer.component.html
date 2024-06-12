@@ -22,10 +22,13 @@
                 <div class="item">
                     <h4 class="text-uppercase">additional links</h4>
                     <ul>
+                        <li><a routerLink="/">Home</a></li>
                         <li><a routerLink="/about">About us</a></li>
-                        <li><a href="#">Terms and conditions</a></li>
+                        <!-- <li><a href="#">Terms and conditions</a></li>
                         <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href="#">News</a></li> -->
+                        <li><a routerLink="/service">Services</a></li>
+                        <li><a routerLink="/gallery">Gallery</a></li>
                         <li><a routerLink="/contact">Contact us</a></li>
                     </ul>
                 </div>
@@ -33,11 +36,12 @@
             <div class="col-lg-3 col-md-12 col-12">
                 <div class="item">
                     <h4 class="text-uppercase">newsletter</h4>
-                    <form>
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
+                    <form *ngIf="!newsletterSubmitted" [formGroup]="enquiryForm" (ngSubmit)="submitForm()">
+                        <input type="text" placeholder="Name" formControlName="name">
+                        <input type="email" placeholder="Email" formControlName="email">
                         <input type="submit" value="Submit">
                     </form>
+                    <div *ngIf="newsletterSubmitted" >Thanks for subscribing to newsletter!</div>
                 </div>
             </div>
         </div>
