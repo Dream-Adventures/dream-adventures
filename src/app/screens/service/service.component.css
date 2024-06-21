@@ -9,7 +9,7 @@
     color: #007bff;
 }
 .hero-section {
-    background-image: url('https://source.unsplash.com/1600x900/?travel,adventure');
+    background-image: url('/assets/gotours/imgs/contact.jpg');
     background-size: cover;
     background-position: center;
     color: white;
