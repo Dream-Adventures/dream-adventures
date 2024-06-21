@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Deploy
 `ng deploy --base-href=/dream-adventures/`
 `ng deploy --cname=thedreamadventures.com`
+`ng deploy --cname=thedreamadventures.com --repo=https://github.com/Dream-Adventures/dream-adventures.git`
 
 ## Development server
 
