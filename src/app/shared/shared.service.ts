@@ -10,6 +10,7 @@ export class SharedService {
   destination:Places|null = null;
   isDestinationModalVisible = false;
 
+  bookFormModalTitle = '';
   isBookFormModalVisible = false;
   bookForm = new FormGroup({
     name: new FormControl('', Validators.required),

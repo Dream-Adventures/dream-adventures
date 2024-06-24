@@ -17,9 +17,10 @@ export class PriceCardComponent {
   
   sharedService = inject(SharedService);
   
-  openModal() {
+  openModal(title: string) {
     console.log("opening modal");
     this.sharedService.isBookFormModalVisible = true;
+    this.sharedService.bookFormModalTitle = title;
   }
 
   closeModal() {
