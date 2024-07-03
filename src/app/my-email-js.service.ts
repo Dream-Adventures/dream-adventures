@@ -5,7 +5,7 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
   providedIn: 'root'
 })
 export class MyEmailJsService {
-  private serviceID: string = 'service_brtdka7'; // Replace with your actual Service ID
+  private serviceID: string = 'service_zc0r55f'; // Replace with your actual Service ID
   private templateID: string = 'template_op4e30x'; // Replace with your actual Template ID
   private userID: string = 'iFnp6ffwzqThzwe5H'; // Replace with your actual User ID
 
