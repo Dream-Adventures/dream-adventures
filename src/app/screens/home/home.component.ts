@@ -26,6 +26,8 @@ export class HomeComponent {
     }
   }
 
+  yearPassed = new Date().getFullYear() - 2019;
+
   emailService = inject(MyEmailJsService);
   router = inject(Router)
   sharedService = inject(SharedService);
