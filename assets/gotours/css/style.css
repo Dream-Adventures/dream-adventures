@@ -28,7 +28,7 @@ header {
 }
 
 h2 span, h1 span {
-    color: #bd8cbf;
+    color: #656565;
 }
 
 li {
@@ -57,14 +57,16 @@ nav.navbar {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #000000b8;
+    /* background-color: #000000b8; */
+    background-color:#ffd600 !important;
     width: 100%;
     z-index: 1000;
     font-family: 'Open Sans', sans-serif;
 }
 
 nav.navbar a, nav.navbar ul li a {
-    color: #FFF !important;
+    color:  #000000 !important;
+    font-weight: bolder;
 }
 
 nav.navbar ul li {
@@ -355,7 +357,7 @@ header button:hover a {
 }
 
 .statistics i, .statistics p {
-    color: #bd8cbf;
+    color: #6b651d;
 }
 
 .statistics i {
@@ -409,8 +411,8 @@ header button:hover a {
     height: 40px;
     padding: 0;
     line-height: 40px;
-    background-color: #ef44f8;
-    color: white;
+    background-color: #ffc107;
+    color: black;
     margin: 0 auto;
     display: block;
 }
