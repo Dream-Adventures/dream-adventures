@@ -51,14 +51,14 @@
   .background-content a {
     padding: 10px 40px;
     display: block;
-    color: #FFF;
+    color: black;
     font-size: 20px;
     font-weight: 900;
   
   }
   
   .background-content button {
-    background-color: #0000006e;
+    background-color: #ffd600;
     display: block;
     border: 2px solid #FFF;
     border-radius: 50px;

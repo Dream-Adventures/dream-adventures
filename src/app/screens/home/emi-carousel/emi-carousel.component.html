@@ -1,0 +1,18 @@
+
+
+<div class="container mt-5 text-center">
+    <h3>Stress-Free Holidays with US</h3>
+    <div *ngIf="isBrowser">
+    <carousel [itemsPerSlide]="itemsPerSlide"
+              [singleSlideOffset]="false"
+              [interval]="3000"
+              [indicatorsByChunk]="true"
+              [singleSlideOffset]="true"
+              [isAnimated]="true">
+      <slide *ngFor="let slide of slides; let index=index">
+        <img [src]="slide.url" alt="image slide" style="display: block; width: 100%;">
+    
+      </slide>
+    </carousel>
+</div>
+</div>

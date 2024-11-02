@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { SharedService } from '../shared.service';
+import { ConstantService } from '../constant.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,5 +25,11 @@ export class NavbarComponent {
     this.collapseNavbar();
     this.router.navigateByUrl("/destination");
     this.sharedService.isDestinationModalVisible = true;
+  }
+  
+  constantService = inject(ConstantService);
+
+  waBook() {
+    return this.constantService.whatsappBookNow();
   }
 }

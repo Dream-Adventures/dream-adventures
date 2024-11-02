@@ -9,11 +9,12 @@ import { CountryDataService } from '../../shared/country-data.service';
 import { MyEmailJsService } from '../../my-email-js.service';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { EmailJSResponseStatus } from '@emailjs/browser';
+import { EmiCarouselComponent } from './emi-carousel/emi-carousel.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule, VideoBackgroundComponent, ReactiveFormsModule],
+  imports: [NavbarComponent, FooterComponent, CommonModule, VideoBackgroundComponent, ReactiveFormsModule, EmiCarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
